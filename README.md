@@ -1,2 +1,2 @@
-# powershell-batch
-powershell script &amp; batch files
+# powershell
+powershell scripts
