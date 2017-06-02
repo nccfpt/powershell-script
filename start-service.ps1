@@ -9,33 +9,33 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 	$index=1
 	$Services=Get-Service | Where-Object {$_.Status -eq "Stopped"}
 	#return entire listing of applications 
-	    Write-Host "ID`t Service Name"
-    	""
+	    	Write-Host "ID`t Service Name"
+    		""
 	foreach ($Service in $Services)
 	{
 		Write-Host " $index`t $($Service.DisplayName)"
 		$index++
 	}
     
-    Do
-    {
-        ""
-        $IDs=Read-Host -Prompt "For start the service please select ID and press enter"
-    }
-    While($IDs -eq "")
+    	Do
+    	{
+        	""
+        	$IDs=Read-Host -Prompt "For start the service please select ID and press enter"
+    	}
+    		While($IDs -eq "")
     
-	#check whether input values are correct
-	try
-	{	
+		#check whether input values are correct
+		try
+		{	
 		[int[]]$IDs=$IDs -split ","
-	}
-	catch
-	{
-		 StatusText "`n$($_.Exception.Message)" 
-	}
+		}
+		catch
+		{
+		 	StatusText "`n$($_.Exception.Message)" 
+		}
 
-	foreach ($ID in $IDs)
-	{
+		foreach ($ID in $IDs)
+		{
 		#check id is in the range
 		if ($ID -ge 1 -and $ID -le $Services.count)
 		{
@@ -51,7 +51,6 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 		{
 			""
             		Write-warning -Message "wrong ID"
-           
         	}
-    }
+    	}
     Pause
