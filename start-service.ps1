@@ -16,14 +16,12 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 		Write-Host " $index`t $($Service.DisplayName)"
 		$index++
 	}
-    
     	Do
     	{
         	""
         	$IDs=Read-Host -Prompt "For start the service please select ID and press enter"
     	}
     	While($IDs -eq "")
-    
 	#check whether input values are correct
 	try
 	{	
