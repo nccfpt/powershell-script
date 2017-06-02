@@ -44,14 +44,14 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 			$ServiceName=$Services[$ID].Name
 
 			Get-WMIObject win32_service | Where-Object {$_.Name -eq "$ServiceName"}
-            Set-Service $ServiceName -StartupType automatic
-            Start-Service $ServiceName
+            		Set-Service $ServiceName -StartupType automatic
+            		Start-Service $ServiceName
 		}
 		else
 		{
 			""
-            Write-warning -Message "wrong ID"
+            		Write-warning -Message "wrong ID"
            
-        }
+        	}
     }
     Pause
