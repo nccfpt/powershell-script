@@ -22,20 +22,19 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
         	""
         	$IDs=Read-Host -Prompt "For start the service please select ID and press enter"
     	}
-    		While($IDs -eq "")
+    	While($IDs -eq "")
     
-		#check whether input values are correct
-		try
-		{	
+	#check whether input values are correct
+	try
+	{	
 		[int[]]$IDs=$IDs -split ","
-		}
-		catch
-		{
-		 	StatusText "`n$($_.Exception.Message)" 
-		}
-
-		foreach ($ID in $IDs)
-		{
+	}
+	catch
+	{
+		 StatusText "`n$($_.Exception.Message)" 
+	}
+	foreach ($ID in $IDs)
+	{
 		#check id is in the range
 		if ($ID -ge 1 -and $ID -le $Services.count)
 		{
