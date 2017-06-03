@@ -16,7 +16,7 @@ Function Main-menu()
 {
 	$index=1
 	$Features=Get-WindowsOptionalFeature -Online | ? State -eq 'disabled' | Select FeatureName
-	#return entire listing of applications 
+	#return entire listing of features 
 	    	Write-Host "ID`t Feature Name"
     		Write-Host ""
 	foreach ($Feature in $Features)
