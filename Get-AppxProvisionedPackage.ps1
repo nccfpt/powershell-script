@@ -17,24 +17,24 @@ Function Main-menu()
 	$index=1
 	$apps=Get-AppxProvisionedPackage -online
 	#return entire listing of applications 
-	    Write-Host "ID`t App name"
-        Write-Host ""
+	    	Write-Host "ID`t App name"
+        	Write-Host ""
 	foreach ($app in $apps)
 	{
 		Write-Host " $index`t $($app.DisplayName)"
         $index++
-    }
-    if ($apps)
-    {
+    	}
+    	if ($apps)
+    	{
 		$index++
-        Write-Host ""
-        pause
+        	Write-Host ""
+        	pause
 	}
-    else
-    {
-        Write-Host "Apps not found"
-        Write-Host ""
-        pause
-    }
+    	else
+    	{
+        	Write-Host "Apps not found"
+        	Write-Host ""
+        	pause
+    	}
 }
 Main-menu
