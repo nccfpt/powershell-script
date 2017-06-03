@@ -26,12 +26,12 @@ Function Main-menu()
 		$index++
 	}
     
-    Do
-    {
-        Write-Host ""
-        $IDs=Read-Host -Prompt "For stop the service please select ID and press enter"
-    }
-    While($IDs -eq "")
+    	Do
+    	{
+        	Write-Host ""
+        	$IDs=Read-Host -Prompt "For stop the service please select ID and press enter"
+    	}
+    	While($IDs -eq "")
     
 	#check whether input values are correct
 	try
@@ -53,20 +53,20 @@ Function Main-menu()
 			$ServiceName=$Services[$ID].Name
 
 			Get-WMIObject win32_service | Where-Object {$_.Name -eq "$ServiceName"}
-            Set-Service $ServiceName -StartupType disabled
-            Stop-Service $ServiceName
-            pause
-            cls
-            Main-menu
+            		Set-Service $ServiceName -StartupType disabled
+            		Stop-Service $ServiceName
+            		pause
+            		cls
+            		Main-menu
 		}
 		else
 		{
 			Write-Host ""
-            Write-warning -Message "wrong ID"
-            Write-Host ""
-            pause
-            cls
-            Main-menu
+            		Write-warning -Message "wrong ID"
+            		Write-Host ""
+            		pause
+            		cls
+            		Main-menu
         }
     }
 }
