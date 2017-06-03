@@ -2,7 +2,7 @@
 # Created by Nguyen Tuan
 # Website:  www.blogthuthuatwin10.com
 # Github:   github.com/blogthuthuatwin10
-# Facebook: facebook.com\blogthuthuatwin10
+# Facebook: facebook.com/blogthuthuatwin10
 # Twitter:  twitter.com/thuthuatwin10
 # Google+:  plus.google.com/+blogthuthuatwin10
 # Youtube:  youtube.com/blogthuthuatwin10
