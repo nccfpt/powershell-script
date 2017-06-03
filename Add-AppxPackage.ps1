@@ -16,31 +16,31 @@ Function Main-menu()
 {
     $index=1
 	$apps=Get-AppxPackage -PackageTypeFilter Bundle -AllUsers
-	#return entire listing of applications 
-	    Write-Host "ID`t App name"
-        Write-Host ""
+	#return entire listing of apps 
+	    	Write-Host "ID`t App name"
+        	Write-Host ""
 	foreach ($app in $apps)
 	{
 		Write-Host " $index`t $($app.name)"
 		$index++
 	}
-    if ($apps)
-    {
+    	if ($apps)
+    	{
 		$index++
-        Write-Host ""
+        	Write-Host ""
 	}
-    else
-    {
-        Write-Host "Apps not found"
-        Write-Host ""
-        pause
-    }  
-    Do
-    {
-        Write-Host ""
-        $IDs=Read-Host -Prompt "For add each app please select ID and press enter"
-    }
-    While($IDs -eq "")
+    	else
+    	{
+        	Write-Host "Apps not found"
+        	Write-Host ""
+        	pause
+    	}  
+    	Do
+    	{
+        	Write-Host ""
+        	$IDs=Read-Host -Prompt "For add each app please select ID and press enter"
+    	}
+    	While($IDs -eq "")
     
 	#check whether input values are correct
 	try
@@ -62,18 +62,18 @@ Function Main-menu()
 			$AppName=$apps[$ID].name
 
 			Get-AppxPackage -AllUsers $AppName | Foreach {Add-AppxPackage -Register "$($_.InstallLocation)\appxmanifest.xml" -DisableDevelopmentMode}
-            pause
-            cls
-            Main-menu
+            		pause
+           	 	cls
+            		Main-menu
 		}
 		else
 		{
 			Write-Host ""
-            Write-warning -Message "wrong ID"
-            Write-Host ""
-            pause
-            cls
-            Main-menu
+            		Write-warning -Message "wrong ID"
+            		Write-Host ""
+            		pause
+            		cls
+            		Main-menu
 		}
 	}
 }
