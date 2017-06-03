@@ -26,7 +26,7 @@ Function Main-menu()
     	Do
     	{
         	Write-Host ""
-        	$IDs=Read-Host -Prompt "For start a service please select ID and press enter"
+        	$IDs=Read-Host -Prompt "For start each service please select ID and press enter"
     	}
     	While($IDs -eq "")
 	#check whether input values are correct
