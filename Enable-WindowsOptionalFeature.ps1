@@ -28,7 +28,7 @@ Function Main-menu()
     	Do
     	{
         	Write-Host ""
-        	$IDs=Read-Host -Prompt "For enable a feature please select ID and press enter"
+        	$IDs=Read-Host -Prompt "For enable each feature please select ID and press enter"
     	}
     	While($IDs -eq "")
     
