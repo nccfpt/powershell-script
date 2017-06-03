@@ -1,6 +1,8 @@
 # Start-Service
 # Created by Nguyen Tuan
-# Fb.com\kequaduongvodanh
+# Website:  www.blogthuthuatwin10.com
+# Facebook: facebook.com/blogthuthuatwin10
+# Twitter:  twitter.com/thuthuatwin10
 
 If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]"Administrator")) {
 	Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`" $args" -Verb RunAs
@@ -12,7 +14,7 @@ Function Main-menu()
 	$Services=Get-Service | Where-Object {$_.Status -eq "Stopped"}
 	#return entire listing of applications 
 	    	Write-Host "ID`t Service Name"
-    		""
+    		Write-Host ""
 	foreach ($Service in $Services)
 	{
 		Write-Host " $index`t $($Service.DisplayName)"
@@ -20,7 +22,7 @@ Function Main-menu()
 	}
     	Do
     	{
-        	""
+        	Write-Host ""
         	$IDs=Read-Host -Prompt "For start the service please select ID and press enter"
     	}
     	While($IDs -eq "")
@@ -31,7 +33,7 @@ Function Main-menu()
 	}
 	catch
 	{
-		 StatusText "`n$($_.Exception.Message)" 
+		 Write-Host "Error:" $_.Exception.Message 
 	}
 	foreach ($ID in $IDs)
 	{
