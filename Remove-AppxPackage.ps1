@@ -17,19 +17,19 @@ Function Main-menu()
     $index=1
 	$apps=Get-AppxPackage -PackageTypeFilter Bundle
 	#return entire listing of applications 
-	    Write-Host "ID`t App name"
-        Write-Host ""
+	    	Write-Host "ID`t App name"
+        	Write-Host ""
 	foreach ($app in $apps)
 	{
 		Write-Host " $index`t $($app.name)"
 		$index++
 	}  
-    Do
-    {
-        Write-Host ""
-        $IDs=Read-Host -Prompt "For remove an app please select ID and press enter"
-    }
-    While($IDs -eq "")
+    	Do
+    	{
+        	Write-Host ""
+        	$IDs=Read-Host -Prompt "For remove an app please select ID and press enter"
+    	}
+    	While($IDs -eq "")
     
 	#check whether input values are correct
 	try
@@ -51,18 +51,18 @@ Function Main-menu()
 			$AppName=$apps[$ID].name
 
 			Remove-AppxPackage -Package $apps[$ID]
-            pause
-            cls
-            Main-menu
+            		pause
+            		cls
+            		Main-menu
 		}
 		else
 		{
 			Write-Host ""
-            Write-warning -Message "wrong ID"
-            Write-Host ""
-            pause
-            cls
-            Main-menu
+            		Write-warning -Message "wrong ID"
+            		Write-Host ""
+            		pause
+            		cls
+            		Main-menu
 		}
 	}
 }
