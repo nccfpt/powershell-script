@@ -6,6 +6,8 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 	Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`" $args" -Verb RunAs
 	Exit
 }
+Function Main-menu()
+{
 	$index=1
 	$Services=Get-Service | Where-Object {$_.Status -eq "Stopped"}
 	#return entire listing of applications 
@@ -43,11 +45,19 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 			Get-WMIObject win32_service | Where-Object {$_.Name -eq "$ServiceName"}
             		Set-Service $ServiceName -StartupType automatic
             		Start-Service $ServiceName
+            		pause
+            		cls
+            		Main-menu
 		}
 		else
 		{
-			""
+			Write-Host ""
             		Write-warning -Message "wrong ID"
+            		Write-Host ""
+            		pause
+            		cls
+            		Main-menu
         	}
     	}
-    Pause
+}
+Main-menu
