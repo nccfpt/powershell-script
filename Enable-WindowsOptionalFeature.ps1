@@ -17,20 +17,20 @@ Function Main-menu()
 	$index=1
 	$Features=Get-WindowsOptionalFeature -Online | ? State -eq 'disabled' | Select FeatureName
 	#return entire listing of applications 
-	    Write-Host "ID`t Feature Name"
-    	Write-Host ""
+	    	Write-Host "ID`t Feature Name"
+    		Write-Host ""
 	foreach ($Feature in $Features)
 	{
 		Write-Host " $index`t $($Feature.FeatureName)"
 		$index++
 	}
     
-    Do
-    {
-        Write-Host ""
-        $IDs=Read-Host -Prompt "For enable a feature please select ID and press enter"
-    }
-    While($IDs -eq "")
+    	Do
+    	{
+        	Write-Host ""
+        	$IDs=Read-Host -Prompt "For enable a feature please select ID and press enter"
+    	}
+    	While($IDs -eq "")
     
 	#check whether input values are correct
 	try
@@ -51,19 +51,19 @@ Function Main-menu()
 			#Enable each feature
 			$FeatureName=$Features[$ID].FeatureName
 
-			  Enable-WindowsOptionalFeature -Online -FeatureName $FeatureName -All -NoRestart
-        pause
-        cls
-        Main-menu
+			Enable-WindowsOptionalFeature -Online -FeatureName $FeatureName -All -NoRestart
+        		pause
+        		cls
+       			Main-menu
 		}
 		else
 		{
-		    Write-Host ""
-        Write-warning -Message "wrong ID"
-        Write-Host ""
-        pause
-        cls
-        Main-menu
+		    	Write-Host ""
+        		Write-warning -Message "wrong ID"
+        		Write-Host ""
+        		pause
+        		cls
+        		Main-menu
 		}
 	}
 }
