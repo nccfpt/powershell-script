@@ -28,7 +28,7 @@ Function Main-menu()
     	Do
     	{
         	Write-Host ""
-        	$IDs=Read-Host -Prompt "For stop a service please select ID and press enter"
+        	$IDs=Read-Host -Prompt "For stop each service please select ID and press enter"
     	}
     	While($IDs -eq "")
     
