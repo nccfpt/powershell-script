@@ -15,7 +15,7 @@ Function Main-menu()
 {
 	$index=1
 	$Services=Get-Service | Where-Object {$_.Status -eq "Stopped"}
-	#return entire listing of applications 
+	#return entire listing of services 
 	    	Write-Host "ID`t Service Name"
     		Write-Host ""
 	foreach ($Service in $Services)
