@@ -1,4 +1,4 @@
-# Enable-WindowsOptionalFeature
+# Enable-WindowsOptionalFeature.ps1
 # Created by Nguyen Tuan
 # Website:  www.blogthuthuatwin10.com
 
