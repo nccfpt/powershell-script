@@ -1,4 +1,4 @@
-# Remove-AppxPackage for Current User
+# Remove-AppxPackage.ps1
 # Created by Nguyen Tuan
 # Website:  www.blogthuthuatwin10.com
 
