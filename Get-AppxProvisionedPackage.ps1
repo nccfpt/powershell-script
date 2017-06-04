@@ -1,4 +1,4 @@
-# Remove-AppxProvisionedPackage
+# Remove-AppxProvisionedPackage.ps1
 # Created by Nguyen Tuan
 # Website:  www.blogthuthuatwin10.com
 
