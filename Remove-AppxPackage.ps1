@@ -18,7 +18,18 @@ Function Main-menu()
 	{
 		Write-Host " $index`t $($app.name)"
 		$index++
-	}  
+	}
+	if ($apps)
+    	{
+		$index++
+        	Write-Host ""
+	}
+    	else
+    	{
+        Write-Host "Apps not found"
+        Write-Host ""
+        pause
+    	}  
     	Do
     	{
         	Write-Host ""
@@ -43,9 +54,9 @@ Function Main-menu()
 		{
 			$ID--
 			#Remove each app
-			$AppName=$apps[$ID].name
+			$AppName=$apps[$ID].packagefullname
 
-			Remove-AppxPackage -Package $apps[$ID]
+			Remove-AppxPackage -Package $AppName
             		pause
             		cls
             		Main-menu
