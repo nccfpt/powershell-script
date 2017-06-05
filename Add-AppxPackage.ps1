@@ -57,7 +57,6 @@ Function Main-menu()
 			$AppName=$apps[$ID].name
 
 			Get-AppxPackage -AllUsers $AppName | Foreach {Add-AppxPackage -Register "$($_.InstallLocation)\appxmanifest.xml" -DisableDevelopmentMode}
-            		pause
            	 	cls
             		Main-menu
 		}
