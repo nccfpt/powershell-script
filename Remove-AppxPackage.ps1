@@ -57,7 +57,6 @@ Function Main-menu()
 			$AppName=$apps[$ID].packagefullname
 
 			Remove-AppxPackage -Package $AppName
-            		pause
             		cls
             		Main-menu
 		}
