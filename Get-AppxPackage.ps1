@@ -13,23 +13,23 @@ Function Main-menu()
 	$apps=Get-AppxPackage -PackageTypeFilter Bundle
 	#return entire listing of applications 
 	    Write-Host "ID`t App name"
-        Write-Host ""
+        	Write-Host ""
 	foreach ($app in $apps)
 	{
 		Write-Host " $index`t $($app.name)"
-        $index++
-    }
-    if ($apps)
-    {
+        	$index++
+    	}
+    	if ($apps)
+    	{
 		$index++
-        Write-Host ""
-        pause
+        	Write-Host ""
+        	pause
 	}
-    else
-    {
-        Write-Host "Apps not found"
-        Write-Host ""
-        pause
-    }
+    	else
+    	{
+        	Write-Host "Apps not found"
+        	Write-Host ""
+        	pause
+    	}
 }
 Main-menu
