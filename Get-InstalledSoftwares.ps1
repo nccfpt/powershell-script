@@ -11,10 +11,10 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 Function Main-menu()
 {
 	$index=1
-    $items = @(
-        "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*"
-        "HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
-    )
+    	$items = @(
+        	"HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*"
+        	"HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
+    	)
 	$softwares=Get-ItemProperty $items
 	#return entire listing of softwares 
 	    	Write-Host "ID`t Installed software"
