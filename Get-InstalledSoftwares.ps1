@@ -17,24 +17,24 @@ Function Main-menu()
     )
 	$softwares=Get-ItemProperty $items
 	#return entire listing of softwares 
-	    Write-Host "ID`t Installed software"
-        echo ""
+	    	Write-Host "ID`t Installed software"
+        	echo ""
 	foreach ($software in $softwares)
 	{
 		Write-Host " $index`t $($software.displayname)"
-        $index++
-    }
-    if ($softwares)
-    {
+        	$index++
+    	}
+    	if ($softwares)
+    	{
 		$index++
-        echo ""
-        pause
+        	echo ""
+        	pause
 	}
-    else
-    {
-        Write-Host "Software not found"
-        echo ""
-        pause
+    	else
+    	{
+        	Write-Host "Software not found"
+        	echo ""
+        	pause
     }
 }
 Main-menu
