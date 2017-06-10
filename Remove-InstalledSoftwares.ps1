@@ -9,36 +9,36 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 
 Function Main-menu()
 {
-    $index=1
-    $items = @(
-        "HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*"
-        "HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
-    )
+	$index=1
+    	$items = @(
+        	"HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*"
+        	"HKLM:\Software\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*"
+    	)
 	$softwares=Get-ItemProperty $items
-	#return entire listing of softwares 
-	    Write-Host "ID`t Installed software"
-        echo ""
+    	#return entire listing of softwares 
+		Write-Host "ID`t Installed software"
+        	echo ""
 	foreach ($software in $softwares)
 	{
 		Write-Host " $index`t $($software.displayname)"
-        $index++
-    }
-    if ($softwares)
-    {
+        	$index++
+    	}
+    	if ($softwares)
+    	{
 		$index++
-        echo ""
+        	echo ""
 	}
-    else
-    {
+    	else
+    	{
         Write-Host "Software not found"
         echo ""
         pause
         exit
-    }
+    	}
         Do
         {
-		    echo ""
-            $IDs=Read-Host -Prompt "Select ID and press Enter"
+		echo ""
+            	$IDs=Read-Host -Prompt "Select ID and press Enter"
         }
         While($IDs -eq "")
     
@@ -55,31 +55,30 @@ Function Main-menu()
 	    foreach ($ID in $IDs)
 	    {
 		#check id is in the range
-		    if ($ID -ge 1 -and $ID -le $softwares.count)
-		    {
+		if ($ID -ge 1 -and $ID -le $softwares.count)
+		{
 			$ID--
 			#Remove each app
 			$software=$softwares[$ID].UninstallString
-
 			echo ""
-            echo "Uninstalling software...."
-            Start-Process cmd -ArgumentList "/c ""$software""" -NoNewWindow -Wait
-            cls        
-            echo "Software has been uninstalled successfully"
-            echo ""
-            pause
-            cls
-            Main-menu
-		    }
-		    else
-		    {
+            		echo "Uninstalling software...."
+            		Start-Process cmd -ArgumentList "/c ""$software""" -NoNewWindow -Wait
+            		cls        
+            		echo "Software has been uninstalled successfully"
+            		echo ""
+            		pause
+            		cls
+			Main-menu
+		}
+		else
+		{
 			echo ""
-            Write-warning -Message "wrong ID"
-            echo ""
-            pause
-            cls
-            Main-menu
-		    }
+            		Write-warning -Message "wrong ID"
+            		echo ""
+            		pause
+            		cls
+            		Main-menu
+		}
         }
 }
 Main-menu
