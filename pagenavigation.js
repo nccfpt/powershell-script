@@ -1,4 +1,3 @@
-<script type='text/javascript'>﻿
 /*<![CDATA[*/
     var perPage=20;
     var numPages=4;
@@ -211,4 +210,3 @@
     location.href = pAddress
 }
   /*]]>*/
-</script>
