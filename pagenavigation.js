@@ -1,4 +1,5 @@
-﻿ /*<![CDATA[*/
+<script type='text/javascript'>﻿
+/*<![CDATA[*/
     var perPage=20;
     var numPages=4;
     var firstText ='Đầu';
@@ -210,3 +211,4 @@
     location.href = pAddress
 }
   /*]]>*/
+</script>
